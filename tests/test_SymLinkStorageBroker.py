@@ -7,10 +7,10 @@ import pytest
 from . import tmp_dir_fixture  # NOQA
 from . import TEST_SAMPLE_DATA
 
+
 def test_SymLinkStroageBoker_functional(tmp_dir_fixture):  # NOQA
 
     from dtool_symlink.storagebroker import SymLinkStorageBroker
-
 
     def get_data_dir():
         return TEST_SAMPLE_DATA

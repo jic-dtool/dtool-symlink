@@ -8,7 +8,7 @@ setup(
     name="dtool-symlink",
     packages=["dtool_symlink"],
     version=version,
-    description="Add ability to create dataset where data directory is a symlink",
+    description="Create dataset where data directory is a symlink",
     long_description=readme,
     include_package_data=True,
     author="Tjelvar Olsson",
@@ -19,7 +19,7 @@ setup(
     ],
     entry_points={
         "dtool.storage_brokers": [
-            "SymLinkStorageBroker=dtool_symlink.storagebroker:SymLinkStorageBroker",
+            "SymLinkStorageBroker=dtool_symlink.storagebroker:SymLinkStorageBroker",  # NOQA
         ],
     },
     download_url="{}/tarball/{}".format(url, version),
