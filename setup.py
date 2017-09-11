@@ -14,7 +14,9 @@ setup(
     author="Tjelvar Olsson",
     author_email="tjelvar.olsson@jic.ac.uk",
     url=url,
-    install_requires=[],
+    install_requires=[
+        "dtoolcore>=2.4.0",
+    ],
     entry_points={
         "dtool.storage_brokers": [
             "SymLinkStorageBroker=dtool_symlink.storagebroker:SymLinkStorageBroker",
