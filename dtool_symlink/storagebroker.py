@@ -1,15 +1,27 @@
 """Symbolic link storage broker module."""
 
 import os
+
+try:
+    import Tkinter as tk
+except ImportError:
+    import tkinter as tk
+import tkFileDialog
+
 from dtoolcore.storagebroker import DiskStorageBroker
 
 
 def _get_data_directory():
-    pass
+    root = tk.Tk()
+    root.withdraw()
+    data_directory = tkFileDialog.askdirectory()
+    return data_directory
 
 
 class SymLinkStorageBroker(DiskStorageBroker):
     """SymLinkStorageBroker class."""
+
+    key = "symlink"
 
     def __init__(self, uri, config_path=None):
         super(SymLinkStorageBroker, self).__init__(uri, config_path)
