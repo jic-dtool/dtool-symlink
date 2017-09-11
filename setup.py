@@ -15,6 +15,11 @@ setup(
     author_email="tjelvar.olsson@jic.ac.uk",
     url=url,
     install_requires=[],
+    entry_points={
+        "dtool.storage_brokers": [
+            "SymLinkStorageBroker=dtool_symlink.storagebroker:SymLinkStorageBroker",
+        ],
+    },
     download_url="{}/tarball/{}".format(url, version),
     license="MIT"
 )
