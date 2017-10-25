@@ -30,6 +30,14 @@ Fixed
 Security
 ^^^^^^^^
 
+[0.1.2] - 2017-10-25
+--------------------
+
+Fixed
+^^^^^
+
+- Fixed issue where the symbolic link was not fully resolved
+
 
 [0.1.1] - 2017-10-25
 --------------------
