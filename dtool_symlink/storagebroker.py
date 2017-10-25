@@ -1,20 +1,41 @@
 """Symbolic link storage broker module."""
 
+import sys
 import os
+
+import click
 
 try:
     import Tkinter as tk
 except ImportError:
-    import tkinter as tk
-import tkFileDialog
+    try:
+        import tkinter as tk
+    except ImportError:
+        pass
+
+try:
+    import tkFileDialog
+except ImportError:
+    pass
 
 from dtoolcore.storagebroker import DiskStorageBroker
 
 
 def _get_data_directory():
-    root = tk.Tk()
-    root.withdraw()
-    data_directory = tkFileDialog.askdirectory()
+    try:
+        root = tk.Tk()
+        root.withdraw()
+        data_directory = tkFileDialog.askdirectory()
+    except:
+        data_directory = click.prompt(
+            "Please enter the path to the data directory",
+            type=click.Path(
+                exists=True,
+                file_okay=False,
+                resolve_path=False
+            )
+        )
+
     return data_directory
 
 
