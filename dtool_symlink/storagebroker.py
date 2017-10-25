@@ -32,7 +32,7 @@ def _get_data_directory():
             type=click.Path(
                 exists=True,
                 file_okay=False,
-                resolve_path=False
+                resolve_path=True
             )
         )
     if data_directory is "":
