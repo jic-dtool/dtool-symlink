@@ -35,6 +35,8 @@ def _get_data_directory():
                 resolve_path=False
             )
         )
+    if data_directory is "":
+        sys.exit()
 
     return data_directory
 
