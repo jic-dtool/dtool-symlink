@@ -28,3 +28,31 @@ def test_SymLinkStroageBoker_functional(tmp_dir_fixture):  # NOQA
     symlink_storage_broker.create_structure(get_data_dir_func=get_data_dir)
 
     assert os.path.islink(symlink_storage_broker._data_abspath)
+
+
+def test_SymLinkStorageBroker_complete_cycle(tmp_dir_fixture):  # NOQA
+
+    from dtool_symlink.storagebroker import SymLinkStorageBroker
+    import dtoolcore
+
+    def get_data_dir():
+        return TEST_SAMPLE_DATA
+
+    name = "test_symlink_storage_broker"
+    admin_metadata = dtoolcore.generate_admin_metadata(name)
+
+    uri = "symlink:" + os.path.join(tmp_dir_fixture, name)
+
+    symlink_storage_broker = SymLinkStorageBroker(
+        uri=uri,
+        config_path=None
+    )
+    symlink_storage_broker.create_structure(get_data_dir_func=get_data_dir)
+
+    proto_dataset = dtoolcore.ProtoDataSet(uri, admin_metadata, None)
+    proto_dataset._storage_broker = symlink_storage_broker
+
+    proto_dataset.freeze()
+
+    dataset = dtoolcore.DataSet.from_uri(uri)
+    assert len(dataset.identifiers) == 7
