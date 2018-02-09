@@ -30,6 +30,17 @@ Fixed
 Security
 ^^^^^^^^
 
+
+[0.2.0] - 2018-02-09
+--------------------
+
+Changed
+^^^^^^^
+
+- Simplified the way to specify the symbolic link path in the
+  SymLinkStorageBroker
+
+
 [0.1.2] - 2017-10-25
 --------------------
 
