@@ -12,17 +12,15 @@ dataset to some other form of storage.
 
 If one wants to make use of the
 ``dtool_symlink.storagebroker.SymLinkStorageBroker`` class programatically one
-needs to create a function that returns the data directory to be symbolically
-linked. This function is then passed into the
-``SymLinkStorageBroker.create_structure()`` method. For example::
+needs to set an attribute called ``symlink_path`` on the
+``SymLinkStorageBroker`` instance with the path to the directory to be linked
+before calling the ``create_structure`` method. For example::
 
     from dtool_symlink.storagebroker import SymLinkStorageBroker
 
-    def get_data_dir():
-        return "/my/path/with/data"
-
     symlink_storage_broker = SymLinkStorageBroker("/path/to/dataset")
-    symlink_storage_broker.create_structure(get_data_dir)
+    symlink_storage_broker.symlink_path = "/mnt/my_data/"
+    symlink_storage_broker.create_structure()
 
 
 
