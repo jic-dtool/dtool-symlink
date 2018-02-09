@@ -6,3 +6,5 @@ dist
 .cache
 .coverage
 .eggs
+.pytest_cache
+.tox
