@@ -13,7 +13,7 @@ class SymLinkStorageBroker(DiskStorageBroker):
     def __init__(self, uri, config_path=None):
         super(SymLinkStorageBroker, self).__init__(uri, config_path)
         self._essential_subdirectories = [
-            self._dtool_abspath,
+            self._generate_abspath("dtool_directory"),
             self._overlays_abspath
         ]
 

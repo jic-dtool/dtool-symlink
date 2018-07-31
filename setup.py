@@ -15,7 +15,7 @@ setup(
     author_email="tjelvar.olsson@jic.ac.uk",
     url=url,
     install_requires=[
-        "dtoolcore>=2.4.0",
+        "dtoolcore>=3.4",
     ],
     entry_points={
         "dtool.storage_brokers": [

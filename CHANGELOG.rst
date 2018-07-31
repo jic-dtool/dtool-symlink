@@ -26,6 +26,8 @@ Removed
 Fixed
 ^^^^^
 
+- Make ``SymlinkStorageBroker`` compatible with dtoolcore 3.4.0
+
 
 Security
 ^^^^^^^^
