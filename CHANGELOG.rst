@@ -26,11 +26,17 @@ Removed
 Fixed
 ^^^^^
 
-- Make ``SymlinkStorageBroker`` compatible with dtoolcore 3.4.0
-
 
 Security
 ^^^^^^^^
+
+[0.3.0] - 2018-07-31
+--------------------
+
+Fixed
+^^^^^
+
+- Make ``SymlinkStorageBroker`` compatible with dtoolcore 3.4.0
 
 
 [0.2.0] - 2018-02-09
